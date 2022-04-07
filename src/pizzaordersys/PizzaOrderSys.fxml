@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pizzaordersys.PizzaOrderSysController">
+   <bottom>
+      <GridPane hgap="8.0" maxWidth="1.7976931348623157E308" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </BorderPane.margin>
+         <columnConstraints>
+            <ColumnConstraints hgrow="NEVER" prefWidth="120"/>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" />
+            <ColumnConstraints hgrow="NEVER" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Button mnemonicParsing="false" onAction="#applyFilterButtonPressed" text="Apply Filter" prefWidth="80" GridPane.columnIndex="2" />
+            <TextField fx:id="filterTextField" GridPane.columnIndex="1" />
+            <Label text="Enter filter text:" />
+            
+            <Button mnemonicParsing="false" onAction="#SimpleQueryPressed" text="Search" prefWidth="80" GridPane.rowIndex="1" GridPane.columnIndex="2" />
+            <Label fx:id="simpleQuery" text="Number of Orders and Income Per Day" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+            <Label text="Simple Queies:" GridPane.rowIndex="1" />
+  
+            <Button mnemonicParsing="false" onAction="#RangeQueryPressed" text="Search" prefWidth="80" GridPane.rowIndex="2" GridPane.columnIndex="2" />
+            
+            <Label text="From " GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <DatePicker fx:id="datepickerFrom" prefWidth="125" GridPane.columnIndex="1" GridPane.rowIndex="2" >
+                <GridPane.margin>
+                    <Insets left="35.0" />
+                </GridPane.margin>
+            </DatePicker>    
+            <Label text="To " GridPane.columnIndex="1" GridPane.rowIndex="2" >
+                <GridPane.margin>
+                    <Insets left="190.0" />
+                </GridPane.margin>
+            </Label>
+            <DatePicker fx:id="datepickerTo" prefWidth="125" GridPane.columnIndex="1" GridPane.rowIndex="2" >
+                <GridPane.margin >
+                    <Insets left="215.0" />
+                </GridPane.margin>
+            </DatePicker>    
+            
+            <Label text="Range Queries:" GridPane.rowIndex="2" />
+            
+            <Button mnemonicParsing="false" onAction="#QueryByPhonePressed" text="Search" prefWidth="80" GridPane.rowIndex="3" GridPane.columnIndex="2" />
+            <TextField fx:id="queryByPhone" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+            <Label text="Query By Phone:" GridPane.rowIndex="3" />
+            
+            <Button mnemonicParsing="false" onAction="#QueryByLastNamePressed" text="Search" prefWidth="80" GridPane.rowIndex="4" GridPane.columnIndex="2" />
+            <TextField fx:id="queryByLName" GridPane.rowIndex="4" GridPane.columnIndex="1" />
+            <Label text="Query By Last Name:" GridPane.rowIndex="4" />
+         </children>
+      </GridPane>
+   </bottom>
+   
+   <top>
+      <GridPane hgap="8.0" maxWidth="1.7976931348623157E308" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="NEVER" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TextArea fx:id="queryTextArea" maxWidth="1.7976931348623157E308" prefRowCount="3" promptText="Enter query here the press Submit Query" wrapText="true" />
+            <Button mnemonicParsing="false" onAction="#submitQueryButtonPressed" text="Submit Query" prefWidth="90" GridPane.columnIndex="1" />
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </BorderPane.margin>
+      </GridPane>
+   </top>
+</BorderPane>
